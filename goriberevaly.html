@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1 class="text-4xl text-center mt-6"> Goriber evaly rebooted 2.0 </h1>
+    <div class="text-center mt-6">
+        <textarea id="text-area" placeholder="leave a review" class="textarea mx-auto textarea-bordered textarea-lg w-96" >
+
+        </textarea>
+    </div>
+    <div class="text-center ml-80">
+        <button id="submit" class="btn bg-red-500">submit</button>
+    </div>
+    <p id ="user-review" class="text-red-800 text-3xl text-center mr-40 mt-7"> user review</p>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function(){
+            const textArea = document.getElementById('text-area');
+            const textValue = textArea.value;
+            const p = document.createElement('p');
+            p.innerText = textValue;
+            
+            const review = document.getElementById('user-review');
+            review.appendChild(p);
+            textArea.value = '';
+            
+        })
+    </script>
+</body>
+</html>
